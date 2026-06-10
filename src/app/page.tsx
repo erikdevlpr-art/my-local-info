@@ -2,7 +2,7 @@ import Link from "next/link";
 import localInfoDataRaw from "../../public/data/local-info.json";
 
 interface InfoItem {
-  id: string;
+  id: string | number;
   title: string;
   category: "행사" | "혜택" | string;
   startDate: string;
