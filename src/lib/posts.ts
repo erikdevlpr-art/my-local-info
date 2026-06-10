@@ -12,6 +12,7 @@ export interface PostData {
   category: string;
   tags: string[];
   content: string;
+  link?: string;
 }
 
 function formatDate(dateVal: any): string {
@@ -51,6 +52,7 @@ export function getSortedPostsData(): PostData[] {
         category: data.category || '',
         tags: Array.isArray(data.tags) ? data.tags : [],
         content,
+        link: data.link || '',
       } as PostData;
     });
 
@@ -83,5 +85,6 @@ export function getPostData(slug: string): PostData | null {
     category: data.category || '',
     tags: Array.isArray(data.tags) ? data.tags : [],
     content,
+    link: data.link || '',
   };
 }

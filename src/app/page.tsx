@@ -1,5 +1,6 @@
 import Link from "next/link";
 import localInfoDataRaw from "../../public/data/local-info.json";
+import AdBanner from '../components/AdBanner';
 
 interface InfoItem {
   id: string | number;
@@ -52,6 +53,9 @@ export default function Home() {
             <Link href="/blog" className="text-sm font-semibold text-stone-700 hover:text-amber-700 transition-colors">
               블로그
             </Link>
+            <Link href="/about" className="text-sm font-semibold text-stone-700 hover:text-amber-700 transition-colors">
+              소개
+            </Link>
           </div>
         </nav>
 
@@ -86,6 +90,24 @@ export default function Home() {
                 key={item.id}
                 className="bg-white rounded-2xl shadow-sm border border-stone-100 hover:shadow-md hover:border-amber-300/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
               >
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Event",
+                      "name": item.title,
+                      "startDate": item.startDate,
+                      "endDate": item.endDate || item.startDate,
+                      "location": {
+                        "@type": "Place",
+                        "name": item.location,
+                        "address": item.location
+                      },
+                      "description": item.summary
+                    })
+                  }}
+                />
                 <div className="p-6">
                   {/* 카테고리 태그 */}
                   <div className="flex justify-between items-start mb-4">
@@ -134,6 +156,8 @@ export default function Home() {
           </div>
         </section>
 
+        <AdBanner />
+
         {/* 2. 지원금/혜택 정보 목록 */}
         <section>
           <div className="flex items-center gap-2 mb-6 border-b border-emerald-200/60 pb-3">
@@ -150,6 +174,21 @@ export default function Home() {
                 key={item.id}
                 className="bg-white rounded-2xl shadow-sm border border-stone-100 hover:shadow-md hover:border-emerald-300/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
               >
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "GovernmentService",
+                      "name": item.title,
+                      "description": item.summary,
+                      "provider": {
+                        "@type": "GovernmentOrganization",
+                        "name": "성남시"
+                      }
+                    })
+                  }}
+                />
                 <div className="p-6">
                   {/* 카테고리 태그 */}
                   <div className="flex justify-between items-start mb-4">
