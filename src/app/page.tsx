@@ -124,7 +124,7 @@ export default function Home() {
                 <div className="px-6 pb-6 pt-2">
                   <Link
                     href="/blog"
-                    className="block text-center w-full bg-stone-50 hover:bg-amber-50 text-stone-700 hover:text-amber-800 text-xs font-bold py-2.5 rounded-xl border border-stone-200/60 hover:border-amber-200 transition-colors"
+                    className="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2.5 rounded-xl shadow-sm hover:shadow transition-all"
                   >
                     자세히 보기 &rarr;
                   </Link>
@@ -188,7 +188,7 @@ export default function Home() {
                 <div className="px-6 pb-6 pt-2">
                   <Link
                     href="/blog"
-                    className="block text-center w-full bg-stone-50 hover:bg-emerald-50 text-stone-700 hover:text-emerald-800 text-xs font-bold py-2.5 rounded-xl border border-stone-200/60 hover:border-emerald-200 transition-colors"
+                    className="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2.5 rounded-xl shadow-sm hover:shadow transition-all"
                   >
                     지원금 신청하러 가기 &rarr;
                   </Link>
