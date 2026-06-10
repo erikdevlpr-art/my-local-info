@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  transpilePackages: ["react-markdown", "remark-gfm"],
 };
 
 export default nextConfig;
