@@ -39,7 +39,22 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-stone-800 font-sans pb-16">
       {/* 상단 헤더 / 히어로 영역 */}
-      <header className="bg-gradient-to-b from-amber-100 to-[#faf8f5] pt-12 pb-8 px-4 text-center">
+      <header className="bg-gradient-to-b from-amber-100 to-[#faf8f5] pb-8 px-4 text-center">
+        {/* 네비게이션 바 */}
+        <nav className="max-w-6xl mx-auto flex justify-between items-center py-4 mb-8 border-b border-amber-200/40">
+          <Link href="/" className="text-xl font-bold text-stone-900 flex items-center gap-1">
+            🏡 성남나우
+          </Link>
+          <div className="flex gap-4">
+            <Link href="/" className="text-sm font-semibold text-stone-700 hover:text-amber-700 transition-colors">
+              홈
+            </Link>
+            <Link href="/blog" className="text-sm font-semibold text-stone-700 hover:text-amber-700 transition-colors">
+              블로그
+            </Link>
+          </div>
+        </nav>
+
         <div className="max-w-4xl mx-auto">
           <span className="inline-block bg-amber-500/10 text-amber-700 font-bold text-xs px-3 py-1 rounded-full mb-3">
             📍 우리 동네 실시간 소식
@@ -108,7 +123,7 @@ export default function Home() {
                 {/* 하단 링크 버튼 */}
                 <div className="px-6 pb-6 pt-2">
                   <Link
-                    href={`/info/${item.id}`}
+                    href="/blog"
                     className="block text-center w-full bg-stone-50 hover:bg-amber-50 text-stone-700 hover:text-amber-800 text-xs font-bold py-2.5 rounded-xl border border-stone-200/60 hover:border-amber-200 transition-colors"
                   >
                     자세히 보기 &rarr;
@@ -172,7 +187,7 @@ export default function Home() {
                 {/* 하단 링크 버튼 */}
                 <div className="px-6 pb-6 pt-2">
                   <Link
-                    href={`/info/${item.id}`}
+                    href="/blog"
                     className="block text-center w-full bg-stone-50 hover:bg-emerald-50 text-stone-700 hover:text-emerald-800 text-xs font-bold py-2.5 rounded-xl border border-stone-200/60 hover:border-emerald-200 transition-colors"
                   >
                     지원금 신청하러 가기 &rarr;
